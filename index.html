@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>My Proyects by Agustin Bustos</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      
+      <div>
+        <h1>My Proyects by Agustin Bustos</h1>
+
+        <p><em>Visit my <a href="https://www.linkedin.com/in/agustinbustos/" target="_blank">LinkedIn</a> or <a href="https://github.com/AgustinBustos" target="_blank">Github</a>.</em></p>
+
+        <hr/>
+        <h2><a href="https://githubtocolab.com/AgustinBustos/pca_and_neuralNets/blob/6f488aff8f7f4e65a1ba194afbe220c32909c64c/pca_and_neuralNets.ipynb" target="_blank">PCA and Neural Nets</a></h2>
+
+        <p>While trying to cluster costumers opinions on certain elements i came up with a nice model that could later replicate results similar to the pca analysis. The main object to analyze is the set of distributions of consumer ratings on credit card features:<br> 
+         
+        </p>
+        <section id="nopad">
+          <img src="images\joy3.png">
+        </section>
+        
+        <br><br><h4 id="features1" dir="rtl">Ease in improving Credit Score of child added</h4>
+        <h4 id="features1" dir="rtl">BNPL</h4>
+        <h4 id="features1" dir="rtl">Educational tools to improve Credit Score</h4>
+        <h4 id="features1" dir="rtl">App</h4>
+        <h4 id="features1" dir="rtl">Ease in improving Credit Score</h4>
+        <h4 id="features1" dir="rtl">Costumer service</h4>
+        <h4 id="features1" dir="rtl">Interest rates</h4>
+        <h4 id="features1" dir="rtl">Rewards program</h4>
+        <h4 id="features1" dir="rtl">Safety measures</h4><br><br><br>
+
+
+        <p>It is possible to cluster the distributions into 4 sections either by using the pca analysis or the minimization of euclidean representations error:</p>
+        <iframe src="dinamic\pca.html" height="600" width="900" frameBorder="0"></iframe>
+        
+        <p>There are several advantages we get by using the NN way of representation, 
+          one of them is getting some kind of inverse function that goes from the 2 dimensional 
+          Euclidean representation to the distribution representation. So by giving a horizontal slider, we get a possible continuation over the public preferences: </p>
+          <h3 align='center'>Pattern Continuation</h3>
+          <iframe src="dinamic\slider.html" height="600" width="900" frameBorder="0"></iframe>
+        
+        <p><em>Explore the notebook <a href="https://githubtocolab.com/AgustinBustos/pca_and_neuralNets/blob/6f488aff8f7f4e65a1ba194afbe220c32909c64c/pca_and_neuralNets.ipynb" target="_blank">here</a>.</em></p>
+        <hr/>
+        <h2><a href="https://githubtocolab.com/AgustinBustos/no_more_exponential/blob/6e573852171deefc1a3bd6b5dc345aef3d64587d/equDiff_nn_intro.ipynb" target="_blank">Differential Equations</a></h2>
+
+        
+        <p>This is an introduction and first exploration of a recent idea i had while working with the ARIMA model, as always im sure it's already done somewhere, but maybe differential equations are a bit overvalued (especially in the realm of economics), so i have the feeling that it's going to take some time in order for me to really use the results capabilities.</p>
+        <p>We are going to work with the classic equation:<br>
+          <div align="center">  
+        <iframe src="dinamic\firstEqu.html" height="100" width="100" frameBorder="0"></iframe> <br>
+        <iframe src="dinamic\secondEqu.html" height="100" width="100" frameBorder="0"></iframe><br> </div>
+        Giving the result: <br/> 
+        <div align="center">
+        <iframe src="dinamic\third.html" height="100" width="100" frameBorder="0"></iframe></div> </p>
+
+        <p>First we initialize a random network which is going to approximate the answer, and using the pytorch backprop algo, we can get a new network which is going to be the first derivative against the domain.<br>
+        So the random phase graph will be:</p><br>
+        <h3 align='center'>Initial Phase</h3>
+        <iframe src="dinamic\initialPhase.html" height="600" width="900" frameBorder="0"></iframe>
+        <p>The scatter represents the real phase, and the 45 degree line represents the equation, the reason is a translation property, in this case we can translate a differential equation into a new loss function, we want to put the points into the line, then the main equation is:  </p>
+        <div align="center">
+          <iframe src="dinamic\errorEqu.html" height="200" width="1000" frameBorder="0"></iframe></div>
+
+        <p>In real life, we have: 
+          <pre><code>loss = mse(f_hat(xt), f_hat_prime(xt))+(f_hat(torch.tensor(0.0))[0]-torch.tensor(1.0))**2
+          </code></pre>
+        </p>
+        <p>After training the network with the previous loss, we get the following results:</p>
+        <h3 align='center'>Trained Phase</h3>
+        <iframe src="dinamic\finalphase.html" height="600" width="900" frameBorder="0"></iframe>
+        <h3 align='center'>Function Comparison (it is recomended to zoom in)</h3>
+        <iframe src="dinamic\comparison.html" height="600" width="900" frameBorder="0"></iframe>
+        <p><em>Explore the notebook <a href="https://githubtocolab.com/AgustinBustos/no_more_exponential/blob/6e573852171deefc1a3bd6b5dc345aef3d64587d/equDiff_nn_intro.ipynb" target="_blank">here</a>.</em></p>
+        <hr/>
+
+        <h2><a href="https://github.com/AgustinBustos/Tesis_Bella_Bonilla_Bustos" target="_blank">Counterfactual Creation</a></h2>
+        <p>We are going to calculate a proxy counterfactual to a variable that is impacted by a treatment in an specific point in time. In this case, the variable is the housing prices in London boroughs, and the treatment is the 2008 crisis. We divide the boroughs in 2 subsets, by the inundation probabilities in the future, the first subset is the one which is highly probable to be under water by 2050 (in this case we have a zero as the transversal condition). <br>
+          The hypothesis is that the crisis should have had (on average) more impact over the first subset of boroughs because it was the case that after the incentives correction, among other things, people started discounting the null transversal condition.<br>
+        
+        Using a generalization of the Abadie matching algo 'Synthetic Control' (with SkLearn Kernel Regression), we get the following counterfactual predictions:
+      </p>
+       <iframe src="dinamic\counterfactual.html" height="600" width="900" frameBorder="0"></iframe>
+       <p>Around -0.5 is the point of treatment, every line represents the difference between the real value and its counterfactual. It is possible to
+         identify that the treated boroughs have a slight upwards trend, and a higher standar deviation. For the hypothesis testing exercise we will work with the exponential trends of every difference; so the the 2 main variables are going to be the slope and the independent term of the log normalization. <br>
+         It is possible to think of the slope as the long term correction and the independent term as the short term correction. As a final note, using a variation of the placebo test by Duflo we will get the confidence interval for the mean of the two variables in the treated subset.
+       </p>
+       <div align='center'><img src="images\test.png"></div>
+       
+       <br>
+       In conclusion, after making a montecarlo simulation with the inferred kernel distribution given by the placebo markers, we can see a positive effect in the short term correction (x axis), but no generalized long term effect (y axis). 
+       <br>
+       <br>
+       <p><em>Explore the proyect <a href="https://github.com/AgustinBustos/Tesis_Bella_Bonilla_Bustos" target="_blank">here</a>.</em></p>
+        <hr>
+        <div align='right'><p><em>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist" target="_blank">orderedlist</a>.</em></p>
+        </div>
+
+
+
+
+
+
+
+
+
+        </div>
+      
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+  </body>
+</html>
