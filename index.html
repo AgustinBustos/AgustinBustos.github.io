@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <meta name="viewport" content="width=device-width">
+    
+    
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -19,6 +21,46 @@
         <h1>My Proyects by Agustin Bustos</h1>
 
         <p><em>Visit my <a href="https://www.linkedin.com/in/agustinbustos/" target="_blank">LinkedIn</a> or <a href="https://github.com/AgustinBustos" target="_blank">Github</a>.</em></p>
+
+        <hr/>
+        <h2><a href="https://github.com/AgustinBustos/true_d6" target="_blank">True D6</a></h2>
+
+        <p>Lately i have been playing with pseudorandom generators, 
+          the "pseudo" aspect is very intriguing to me, 
+          the reason is that in order to find a truly random sequence, 
+          all i could find is some usage of radioactive material; 
+          but why not use data from the world? surely there must be some kind of true randomness in 
+          (for example) the costumer default on credit card data;
+           and thats exactly what i'm going to use as input:
+            <a href="https://www.kaggle.com/competitions/amex-default-prediction/data?select=train_labels.csv" target="_blank">
+              https://www.kaggle.com/competitions/amex-default-prediction/data?select=train_labels.csv</a>
+              .</p>
+        
+        <p>By transforming the randomness of a real world table i will create a truly random sequence and thus replicate the behavior of a real D6 roll: </p>
+        <div align="center">
+          <button id="roll" style="font-size: 64px;">Roll!</button>
+          <h1 id="die" style="font-size: 128px;">1523</h1>
+          <script src="./javascripts/die.js"></script>
+          
+        </div>
+
+        <p>Although not yet tested with the 'NIST Statistical Test Suite for Random and Pseudo-Random Generators', this number should be more random than the classic RNG number.<br>
+        The proyect had a first aim of learning some important (but boring) programing languages, but it went a little out of control; the languajes used were:</p>
+        <ul>
+          <li><b>MYSQL</b>: to create the database.</li>
+          <li><b>Python with Flask</b>: to create the API.</li>
+          <li><b>Javascript</b>: to create the visualization.</li>
+        </ul>
+        <p>So i have a server with the database hosted in Heroku, and another server with the API that 
+          interacts with the first one; lastly, js is used for the fetch methods that give the final answer. The main sequence from which all stems is <a href="https://true-d6-999birds.herokuapp.com/main_seq" target="_blank">here</a>. </p>
+        <P>As an introductory SQL proyect i didn't want to do the usual data analysis stuff, 
+          so i went to Numberphile looking for ideas,
+           and thats when i remembered a vague idea i had a while ago while watching this video: 
+           <a href="https://www.youtube.com/watch?v=SxP30euw3-0" target="_blank">https://www.youtube.com/watch?v=SxP30euw3-0</a>
+            why not just use noisy real world data to generate a truly random sequence?
+             As simple as the idea was, it really was a total pain to implement with the new languages.</p>
+        <p><em>Explore the proyect <a href="https://github.com/AgustinBustos/true_d6" target="_blank">here</a>.</em></p>
+
 
         <hr/>
         <h2><a href="https://githubtocolab.com/AgustinBustos/pca_and_neuralNets/blob/6f488aff8f7f4e65a1ba194afbe220c32909c64c/pca_and_neuralNets.ipynb" target="_blank">PCA and Neural Nets</a></h2>
