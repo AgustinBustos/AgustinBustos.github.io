@@ -10,15 +10,26 @@ let die = document.querySelector('#die');
 
 
 // }
-async function loadDie() {
-    const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
-    const url = `https://true-d6-999birds.herokuapp.com/resampled/dice/${seed}&${count}`
-    const response = await fetch(url);
-    const dict = await response.json();
-    return dict
+// async function loadDie() {
+//     const corsAnywhere = 'https://cors-anywhere.herokuapp.com/';
+//     const url = `https://true-d6-999birds.herokuapp.com/resampled/dice/${seed}&${count}`
+//     const response = await fetch(url);
+//     const dict = await response.json();
+//     return dict
     
-  }
+//   }
 
+async function loadDie() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      const result = {
+        decimal: Math.floor(Math.random()*6+1),
+      
+      };
+      resolve(result);
+    }, 3000);
+  });
+}
 
 button.addEventListener('click',async ()=>{
     var timer=setInterval(()=>{die.textContent=Math.floor(Math.random()*6+1)},1)
